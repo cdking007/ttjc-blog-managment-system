@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Cabin Sketch", cursive;
+}
+:root {
+  --primary-theme: rgb(111, 13, 240);
+}
+/* body {
+    background: #000;
+  } */
+/* nav {
+  height: 80px;
+  background: var(--primary-theme);
+  color: #000;
+}
+nav::after {
+  content: ".";
+  font-size: 0px;
+  clear: both;
+}
+label.logo {
+  line-height: 80px;
+  font-size: 2rem;
+  color: #fff;
+  margin-left: 20px;
+}
+.logo a {
+  color: #fff;
+}
+.logo a:hover {
+  color: rgba(233, 219, 15, 0.787);
+  text-decoration: none;
+}
+nav ul {
+  float: right;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0px 20px;
+}
+nav ul li a {
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 20px 40px;
+  transition: all 0.3s;
+}
+.bars {
+  position: absolute;
+  font-size: 2rem;
+  color: #fff;
+  right: 0;
+  margin-right: 10px;
+  line-height: 80px;
+  display: none;
+}
+nav ul li a:hover,
+nav ul li a:active {
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px 3px #20bf55;
+  background: #000;
+}
+@media only screen and (max-width: 952px) {
+  .bars {
+    display: inline-block;
+  }
+
+  nav ul {
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    background: rgb(58, 44, 44);
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  nav ul li a {
+    font-size: 20px;
+    width: 100%;
+    text-decoration: none;
+    padding: 20px 220px;
+  }
+  nav ul li a:hover {
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 3px #20bf55;
+    background: #000;
+  }
+} */
+body {
+  background: rgba(0, 0, 0, 0.822);
+  color: aliceblue;
+}
+.bars {
+  right: 0;
+  position: absolute;
+  color: #fff;
+  margin-right: 20px;
+  font-size: 2rem;
+  z-index: 50;
+  cursor: pointer;
+}
+.bars i {
+  z-index: 10;
+}
+nav {
+  transition: all 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(58, 44, 44);
+  width: 15%;
+  color: #fff;
+  left: -100%;
+}
+nav a {
+  color: #fff;
+}
+nav ul {
+  z-index: 1000;
+}
+nav ul li {
+  margin: 1px 0px;
+  border: 1px solid #fff;
+  font-size: 1.2rem;
+  /* padding: 20px 10px; */
+  box-sizing: border-box;
+}
+nav ul li a {
+  box-sizing: border-box;
+
+  padding: 20px 10px;
+  color: #fff;
+  display: block;
+}
+nav ul li a:hover {
+  color: #20bf55;
+  text-decoration: none;
+  background: #000;
+}
+.showNav {
+  z-index: 100;
+  left: 0px;
+}
+.but-prime {
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  border-radius: 50px;
+  padding: 20px 40px;
+  transition: all 0.5s;
+}
+.but-prime:hover,
+.but-prime:active {
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px 3px #20bf55;
+  background: #000;
+}
+.tit-1 {
+  margin: 20px 0px;
+}
+.tit-1::after {
+  margin-top: 5px;
+  content: ".";
+  font-size: 0px;
+  display: block;
+  width: 50%;
+  height: 5px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: brown;
+}
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  margin: 5px 0;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 40px;
+  background: var(--primary-theme);
+  color: white;
+  text-align: center;
+}
+footer p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+footer span:first-child {
+  color: red;
+}
+footer span a {
+  color: #20bf55;
+  padding: 10px;
+}
+footer span a:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgb(58, 44, 44);
+}
+
+.logo {
+  background-color: var(--primary-theme);
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+}
+.logo a {
+  color: aliceblue;
+  font-size: 2rem;
+}
+.contents {
+  margin: 10px 0px;
+  text-align: center;
+  display: inline-block;
+  padding: 50px;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.con-link {
+  color: aliceblue;
+}
+.contents:hover {
+  background: red;
+  color: aliceblue;
+}
+
+.inp-1 {
+  margin: 5px 0px;
+  /* box-shadow: 0 0px 5px aqua; */
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+  border: 0.5px solid #000;
+  padding: 20px;
+}
+.inp-1::placeholder {
+  color: aqua;
+  padding: 10px;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+table {
+  color: aliceblue !important;
+}

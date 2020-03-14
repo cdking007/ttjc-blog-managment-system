@@ -1,0 +1,62 @@
+<%- include("./partcials/header.ejs") %>
+
+<div class="login-form">
+  <form action="/auth/login" method="post">
+    <% if(messages.error){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error! </strong><%= messages.error %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% } %> <% if(messages.info){ %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>info! </strong><%= messages.info %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% } %>
+    <h2 class="text-center">Log in</h2>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        required="required"
+        name="username"
+        id="username"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        required="required"
+        name="password"
+        id="password"
+      />
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </div>
+    <p class="text-center">
+      <a href="/auth/register" class="btn btn-primary btn-block"
+        >Create an Account</a
+      >
+    </p>
+  </form>
+</div>
+
+<%- include("./partcials/footer.ejs") %>

@@ -1,0 +1,32 @@
+<%- include("./header.ejs") %>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <a href="/admin/posts" class="con-link">
+        <div class="contents">
+          <h1><%= postCount %></h1>
+          <p>Total Posts</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 col-12">
+      <a href="/admin/users" class="con-link">
+        <div class="contents">
+          <h1><%= userCount %></h1>
+          <p>Total Users</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 col-12">
+      <a href="/admin/views" class="con-link">
+        <div class="contents">
+          <h1><%= viewsCount %></h1>
+          <p>Today's view</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<%- include("./footer.ejs") %>

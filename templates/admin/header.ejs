@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/admin.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <p class="bars" id="bars">
+      <i class="fa fa-bars"></i>
+    </p>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="false"
+            aria-expanded="false"
+            aria-labelledby="dLabel"
+          >
+            <span class="nav-label">Post</span> <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu bg-dark">
+            <li><a href="/admin/addpost">add Post</a></li>
+            <li><a href="/admin/posts">All post</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="false"
+            aria-expanded="false"
+            aria-labelledby="dLabel"
+          >
+            <span class="nav-label">users</span> <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu bg-dark">
+            <li><a href="/admin/adduser">add users</a></li>
+            <li><a href="/admin/users">All users</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/admin/settings">site settings</a></li>
+        <li><a href="/logout">logout</a></li>
+      </ul>
+    </nav>
+    <label class="logo text-center">
+      <p class="text-center">
+        <a href="/admin">Admin panel</a>
+      </p>
+    </label>
+  </body>
+</html>
