@@ -18,7 +18,10 @@
           <img src="<%= post.imgUrl %>" class="img-1" alt="<%= post.title %>" />
         </td>
         <td><a href="/post/<%= post.urlTitle %>"><%= post.title %></a></td>
-
+        <% users.forEach((user)=>{ %> <%
+        if(user._id.toString()===post.owner.toString()){ %>
+        <td><%= user.username %></td>
+        <% } %> <% }) %>
         <td>
           <a href="#" class="btn btn-success">Edit</a>
           <a href="#" class="btn btn-danger">Delete</a>
