@@ -232,6 +232,7 @@ footer span a:hover {
 .wrapper-2 {
   width: 100%;
   height: 70vh;
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;

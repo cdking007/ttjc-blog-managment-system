@@ -8,27 +8,45 @@
       data-ride="carousel"
     >
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            class="d-block w-100"
-            src="https://images.unsplash.com/photo-1532010940201-c31e6beacd39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-            alt="First slide"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            class="d-block w-100"
-            src="https://images.unsplash.com/photo-1532010940201-c31e6beacd39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-            alt="Second slide"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            class="d-block w-100"
-            src="https://images.unsplash.com/photo-1532010940201-c31e6beacd39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-            alt="Third slide"
-          />
-        </div>
+        <% if(popularPosts.length>=0){ %>
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="<%= popularPosts[0].imgUrl %>"
+              alt="<%= popularPosts[0].title %>"
+            />
+            <div class="carousel-caption">
+              <h3> <a href="/post/<%= popularPosts[0].urlTitle %>" style="color: aliceblue; font-size: 2rem !important; "> <%= popularPosts[0].title %></a> </h3>
+           
+            </div>
+          </div>
+          <% for(let i=1;i<popularPosts.length;i++){ %>
+            <div class="carousel-item">
+          
+              <img
+                class="d-block w-100"
+                src="<%= popularPosts[i].imgUrl %>"
+                alt="<%= popularPosts[i].title %>"
+              />
+              <div class="carousel-caption">
+                <h3><a href="/post/<%= popularPosts[i].urlTitle %>" style="color: aliceblue; font-size: 2rem !important; "> <%= popularPosts[i].title %></a> </h3>
+             
+              </div>
+            </div>
+          <% } %>
+        <% }else { %>
+
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="https://images.unsplash.com/photo-1532010940201-c31e6beacd39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+              alt="First slide"
+            />
+          </div>
+          
+        <% } %>
+        
+        
       </div>
       <a
         class="carousel-control-prev"
@@ -51,96 +69,36 @@
     </div>
     <!-- featured blogs -->
     <div class="featured">
-      <h1 class="text-center tit-1">Featured Posts</h1>
-      <div class="row">
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://i.pinimg.com/originals/a6/21/37/a6213722cfa9b36b637e1f959f5faf0a.jpg"
-                alt="Card image"
-                style="width:100%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary btn-block">See Profile</a>
+      <h1 class="text-center tit-1">Popular Posts</h1>
+      <div class="row text">
+        <% if(popularPosts.length>=0){ %>
+          <% popularPosts.forEach((post)=>{ %>
+            <!-- single post -->
+          <div class="col-12 col-md-3">
+            <div class="cust-col text-center">
+              <div class="card" width="100%">
+                <img
+                  class="card-img-top"
+                  src="<%= post.imgUrl %>"
+                  alt="<%= post.title %>"
+                  style="width:100%"
+                />
+                <div class="card-body">
+                  <h4 class="card-title"><%= post.title %></h4>
+                  
+                  <a href="/post/<%= post.urlTitle %>" class="btn btn-primary btn-block">Read more</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- single post end -->
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://www.whoa.in/201604-Whoa/10-hd-wallpapers-and-beautiful-images-of-whoain.jpg"
-                alt="Card image"
-                style="width:50%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single post end -->
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://www.whoa.in/201604-Whoa/10-hd-wallpapers-and-beautiful-images-of-whoain.jpg"
-                alt="Card image"
-                style="width:50%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single post end -->
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://www.whoa.in/201604-Whoa/10-hd-wallpapers-and-beautiful-images-of-whoain.jpg"
-                alt="Card image"
-                style="width:50%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single post end -->
+          <!-- single post end -->
+          <% }) %>
+        <% } else { %>
+          <h1 class="text-center">No Post found</h1>
+        <% } %> %>
+          
+        
+        
       </div>
     </div>
     <div class="latest">

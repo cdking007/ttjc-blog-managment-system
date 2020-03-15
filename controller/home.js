@@ -1,10 +1,14 @@
 const Post = require("../models/post");
 
 exports.getHomePage = async (req, res) => {
-  const posts = await Post.find({});
+  const posts = await Post.find({}).sort({ createdAt: -1 });
+  const popularPosts = await Post.find({})
+    .sort({ views: -1 })
+    .limit(4);
   res.render("index", {
     isLogin: req.user ? true : false,
-    posts
+    posts,
+    popularPosts
   });
 };
 
