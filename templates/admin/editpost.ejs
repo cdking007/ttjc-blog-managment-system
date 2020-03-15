@@ -1,0 +1,87 @@
+<%- include("./header.ejs") %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 centered">
+      <div class="shadowd shadowd-2">
+        <h1>Edit Post</h1>
+        <form action="/admin/edit" method="POST">
+          <!-- <label for="title" class="text-1">Title</label> -->
+          <input
+            type="text"
+            class="inp-1"
+            name="title"
+            id="title"
+            placeholder="Title"
+            value="<%= post.title %>"
+            required
+          />
+          <input
+            type="text"
+            class="inp-1"
+            name="imgUrl"
+            id="imgUrl"
+            placeholder="imgUrl"
+            value="<%= post.imgUrl %>"
+            required
+          />
+
+          <textarea
+            name="body"
+            id="body"
+            cols="30"
+            rows="10"
+            class="inp-1"
+            placeholder="body"
+            required
+          >
+          <%= post.body %>
+        </textarea
+          >
+
+          <input
+            type="text"
+            class="inp-1"
+            name="keywords"
+            id="keywords"
+            placeholder="keywords"
+            title="keywords list seprated by ,"
+            value="<%= post.keywords %>"
+            required
+          />
+          <input type="hidden" name="id" id="id" value="<%= post._id %>" />
+          <input
+            type="submit"
+            value="Update"
+            class="btn btn-primary btn-block"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js"
+  referrerpolicy="origin"
+></script>
+<script>
+  tinymce.init({
+    selector: "#body",
+    themes: "modern",
+    plugins: [
+      "advlist autolink lists link image charmap print preview anchor",
+      "searchreplace visualblocks code fullscreen",
+      "insertdatetime media table paste imagetools wordcount",
+      "textcolor",
+      "codesample",
+      "code"
+    ],
+    toolbar:
+      "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor | codesample | code",
+    content_css: [
+      "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
+      "//www.tiny.cloud/css/codepen.min.css"
+    ]
+  });
+</script>
+<%- include("./footer.ejs") %>

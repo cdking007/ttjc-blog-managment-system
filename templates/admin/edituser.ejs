@@ -1,0 +1,82 @@
+<%- include("./header.ejs") %>
+<div class="container">
+    <h1 class="text-center">Edit Member</h1>
+    <form action="/admin/user/edit" method="post">
+        
+      <input
+        type="text"
+        name="username"
+        class="inp-1"
+        id="username"
+        value="<%= user.username %>"
+        disabled="disabled"
+      />
+      <input
+        type="email"
+        name="email"
+        class="inp-1"
+        id="email"
+        value="<%= user.email %>"
+        required="required"
+      />
+      <select id="role" class="inp-1" name="role" id="role" >
+          <option value="<%= user.role %>" name="role" id="role"><%= user.role %></option>
+          <% if (user.role === "member"){ %>
+          <option value="admin" name="role" id="role">admin</option>
+              <% } else { %>
+          <option value="member" name="role" id="role">member</option>
+              <%} %></td>
+      </select>
+      <p>Value of role must be admin or member</p>
+      <input type="hidden" name="id" value="<%= user._id %>" />
+      <input type="submit" value="Update" class="btn btn-success" />
+      <a
+        class="btn btn-info"
+        data-toggle="modal"
+        href="#"
+        data-target="#myModal"
+      >
+        Change password</a
+      >
+    </form>
+    <!-- The Modal -->
+    <form action="/admin/user/edit/changepass" method="post">
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" style="color: black;">Change Password</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+              <input
+                type="password"
+                class="inp-1"
+                placeholder="new password"
+                name="password"
+                id="password"
+              />
+              <input type="hidden" name="id" value="<%= user._id %>">
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <input type="submit" value="update" class="btn btn-success" />
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+</div>
+
+
+<%- include("./footer.ejs") %>
