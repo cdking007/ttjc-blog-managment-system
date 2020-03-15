@@ -12,11 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <% if(posts.length>=0){ %> <% posts.forEach((post)=>{ %>
+      <% if(posts.length>0){ %> <% posts.forEach((post)=>{ %>
       <tr>
-        <td><img src="<%= post.imgUrl %>" alt="<%= post.title %>" /></td>
+        <td>
+          <img src="<%= post.imgUrl %>" class="img-1" alt="<%= post.title %>" />
+        </td>
         <td><a href="/post/<%= post.urlTitle %>"><%= post.title %></a></td>
-        <td><%= post.owner %></td>
+
         <td>
           <a href="#" class="btn btn-success">Edit</a>
           <a href="#" class="btn btn-danger">Delete</a>

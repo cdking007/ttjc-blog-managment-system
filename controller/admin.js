@@ -1,5 +1,7 @@
 const Post = require("../models/post");
 const User = require("../models/user");
+const mongoose = require("mongoose");
+
 exports.getDashboard = async (req, res) => {
   const totPost = await Post.find({}).count();
   const totUser = await User.find({}).count();
@@ -13,9 +15,13 @@ exports.getAddPost = (req, res) => {
   res.render("admin/addpost");
 };
 exports.getAllPost = async (req, res) => {
+  // const uid = mongoose.Types.ObjectId(req.user._id);
   const posts = await Post.find({});
+  const users = await User.find({});
+
   res.render("admin/posts", {
-    posts
+    posts,
+    users
   });
 };
 exports.postAddPost = async (req, res) => {

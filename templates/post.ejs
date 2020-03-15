@@ -45,94 +45,33 @@
   <div class="container">
     <h1 class="text-center tit-1">Latest post</h1>
     <div class="row">
-        <!-- single post -->
+      <% if(posts.length>=0){ %>
+        <% posts.forEach((post)=>{ %>
+          <!-- single post -->
         <div class="col-12 col-md-3">
           <div class="cust-col text-center">
             <div class="card" width="100%">
               <img
                 class="card-img-top"
-                src="https://i.pinimg.com/originals/a6/21/37/a6213722cfa9b36b637e1f959f5faf0a.jpg"
-                alt="Card image"
+                src="<%= post.imgUrl %>"
+                alt="<%= post.title %>"
                 style="width:100%"
               />
               <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
+                <h4 class="card-title"><%= post.title %></h4>
+                
+                <a href="/post/<%= post.urlTitle %>" class="btn btn-primary btn-block">Read more</a>
               </div>
             </div>
           </div>
         </div>
         <!-- single post end -->
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://www.whoa.in/201604-Whoa/10-hd-wallpapers-and-beautiful-images-of-whoain.jpg"
-                alt="Card image"
-                style="width:50%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single post end -->
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://www.whoa.in/201604-Whoa/10-hd-wallpapers-and-beautiful-images-of-whoain.jpg"
-                alt="Card image"
-                style="width:50%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single post end -->
-        <!-- single post -->
-        <div class="col-12 col-md-3">
-          <div class="cust-col text-center">
-            <div class="card" width="100%">
-              <img
-                class="card-img-top"
-                src="https://www.whoa.in/201604-Whoa/10-hd-wallpapers-and-beautiful-images-of-whoain.jpg"
-                alt="Card image"
-                style="width:50%"
-              />
-              <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">
-                  Some example text some example text. John Doe is an architect
-                  and engineer
-                </p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single post end -->
+        <% }) %>
+      <% } else { %>
+        <h1 class="text-center">No Post found</h1>
+      <% } %> %>
+        
+       
       </div>
     </div>
   </div>
