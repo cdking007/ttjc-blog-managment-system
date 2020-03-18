@@ -3,13 +3,15 @@ const passport = require("passport");
 
 exports.getLogin = (req, res) => {
   res.render("login", {
-    isLogin: false
+    isLogin: false,
+    title: "login | bloggerz"
   });
 };
 
 exports.getSignup = (req, res) => {
   res.render("register", {
-    isLogin: false
+    isLogin: false,
+    title: "login | bloggerz"
   });
 };
 

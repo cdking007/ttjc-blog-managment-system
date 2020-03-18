@@ -8,7 +8,8 @@ exports.getHomePage = async (req, res) => {
   res.render("index", {
     isLogin: req.user ? true : false,
     posts,
-    popularPosts
+    popularPosts,
+    title: "Bloggerz - an open source blog management system with multi user"
   });
 };
 
@@ -37,13 +38,15 @@ exports.getPostPage = async (req, res) => {
   res.render("post", {
     post,
     posts,
-    isLogin: req.user ? true : false
+    isLogin: req.user ? true : false,
+    title: post.title
   });
 };
 
 exports.getAddPost = async (req, res) => {
   res.render("addpost", {
-    isLogin: req.user ? true : false
+    isLogin: req.user ? true : false,
+    title: "add post"
   });
 };
 
@@ -78,7 +81,8 @@ exports.getAllPost = async (req, res) => {
 
   res.render("posts", {
     posts,
-    isLogin: req.user ? true : false
+    isLogin: req.user ? true : false,
+    title: "all post"
   });
 };
 
@@ -94,7 +98,8 @@ exports.getEditPost = async (req, res) => {
   }
   res.render("editpost", {
     post,
-    isLogin: req.user ? true : false
+    isLogin: req.user ? true : false,
+    title: post.title + " | edit post"
   });
 };
 
