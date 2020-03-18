@@ -5,8 +5,7 @@
 }
 body {
   font-family: "Cabin Sketch", cursive;
-  background: rgba(0, 0, 0, 0.822);
-  color: aliceblue;
+  background: rgba(255, 255, 255, 0.822);
 }
 :root {
   --primary-theme: rgb(111, 13, 240);
@@ -236,11 +235,51 @@ footer span a:hover {
 }
 .wrapper-2 {
   width: 100%;
+  color: #fff;
   height: 70vh;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contents {
+  margin: 10px 0px;
+  text-align: center;
+  display: inline-block;
+  padding: 50px;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.con-link {
+  color: aliceblue;
+}
+.contents:hover {
+  background: red;
+  color: aliceblue;
+}
+
+.inp-1 {
+  margin: 5px 0px;
+  /* box-shadow: 0 0px 5px aqua; */
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+  border: 0.5px solid #000;
+  padding: 20px;
+}
+.inp-1::placeholder {
+  color: aqua;
+  padding: 10px;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+table {
+  color: aliceblue !important;
+}
+.img-1 {
+  width: 60%;
 }

@@ -1,0 +1,43 @@
+<%- include("./partcials/header.ejs") %>
+
+<div class="container">
+  <h1 class="text-center">All Posts</h1>
+  <table class="table table-bordered" style="color: #000 !important;">
+    <thead>
+      <tr>
+        <th>Thumb</th>
+        <th>Title</th>
+
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(posts.length>0){ %> <% posts.forEach((post)=>{ %>
+      <tr>
+        <td>
+          <img src="<%= post.imgUrl %>" class="img-1" alt="<%= post.title %>" />
+        </td>
+        <td><a href="/post/<%= post.urlTitle %>"><%= post.title %></a></td>
+
+        <td>
+          <a href="/user/post/edit/<%= post._id %>" class="btn btn-success"
+            >Edit</a
+          >
+          <a href="/user/post/delete/<%= post._id %>" class="btn btn-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+
+      <% }) %> <% }else{ %>
+      <tr>
+        <td colspan="4">
+          No post found
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("./partcials/footer.ejs") %>

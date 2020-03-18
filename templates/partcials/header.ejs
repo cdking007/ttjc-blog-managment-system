@@ -33,6 +33,8 @@
         <li><a href="/">Home</a></li>
         <li><a href="#">about</a></li>
         <% if(isLogin){ %>
+        <li><a href="/user/addpost">Add post</a></li>
+        <li><a href="/user/posts">All post</a></li>
         <li><a href="/auth/logout" class="but-prime">Logout</a></li>
         <% }else{ %>
         <li><a href="/auth/login" class="but-prime">Login</a></li>
